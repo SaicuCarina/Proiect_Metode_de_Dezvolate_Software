@@ -21,12 +21,10 @@ namespace IndividualProject
         {
             InitializeComponent();
         }
-
         private void SendCode_Load(object sender, EventArgs e)
         {
 
         }
-
         private void btnSendCode_Click(object sender, EventArgs e)
         {
             string from, pass, messageBody;
@@ -82,5 +80,7 @@ namespace IndividualProject
             }
             else MessageBox.Show("Invalid code!");
         }
+
+        
     }
 }

@@ -9,6 +9,7 @@ namespace IndividualProject
 {
     public class Administration
     {
+        Login Login = new Login();
         List<User> users = new List<User>();
         public User AddUsers
         {
@@ -39,13 +40,8 @@ namespace IndividualProject
         }
         public bool IsInDatabase(string email)
         {
-            MySqlConnection con = new MySqlConnection("server=studmysql01.fhict.local;database=dbi477923;uid=dbi477923;password=secret;");
-            MySqlCommand cmd = new MySqlCommand("Select count(*) from users where Email= @alias", con);
-            cmd.Parameters.AddWithValue("@alias", email);
-            con.Open();
-            int TotalRows = 0;
-            TotalRows = Convert.ToInt32(cmd.ExecuteScalar());
-            con.Close();
+            
+            int TotalRows = Login.NumberOfUsersWithSpecificName(email);
             if (TotalRows > 0)
             {
                 return true;
@@ -55,6 +51,24 @@ namespace IndividualProject
                 return false;
             }
 
+        }
+        public void AddUsersFromList(List<User> users)
+        {
+            this.users = users;
+        }
+        public bool UserNameCheck(string email)
+        {
+            int TotalRows = Login.NumberOfUsersWithSpecificName(email);
+            if (TotalRows > 0)
+            {
+               
+                return true;
+            }
+            else
+            {
+                
+                return false;
+            }
         }
 
     }

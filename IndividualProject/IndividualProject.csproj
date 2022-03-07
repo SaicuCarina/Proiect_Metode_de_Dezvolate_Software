@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\Administration.cs" />
+    <Compile Include="Persistance\Login.cs" />
     <Compile Include="Presentation\CreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,8 +162,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Persistance\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

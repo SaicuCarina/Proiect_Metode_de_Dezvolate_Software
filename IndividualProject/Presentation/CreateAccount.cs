@@ -16,6 +16,7 @@ namespace IndividualProject
     public partial class CreateAccount : Form
     {
         Administration administration = new Administration();
+        Login Login = new Login();
         public CreateAccount()
         {
             InitializeComponent();
@@ -35,18 +36,16 @@ namespace IndividualProject
                     {
                         if (tbPassword.Text == tbRepeatPassword.Text)
                         {
-                            if (UserNameCheck()==false)
+                            if (administration.UserNameCheck(tbMail.Text) == false)
                             {
-                                MySqlConnection conn = new MySqlConnection("server=studmysql01.fhict.local;database=dbi477923;uid=dbi477923;password=secret;");
-                                MySqlCommand cmd = new MySqlCommand("insert into users(Email, Password)values('" + tbMail.Text + "','" + tbPassword.Text + "')", conn);
-                                conn.Open();
-                                cmd.ExecuteNonQuery();
-                                conn.Close();
+                                Login.CreateAccount(tbMail.Text, tbPassword.Text);
                                 this.Hide();
                                 Form1 form1 = new Form1();
                                 form1.Closed += (s, args) => this.Close();
+                                MessageBox.Show("Account created successfully!");
                                 form1.Show();
                             }
+                            else MessageBox.Show("Email already exists!");
                         }
                         else MessageBox.Show("Passwords don't match!");
                     }
@@ -56,25 +55,6 @@ namespace IndividualProject
             }
             else MessageBox.Show("Please fill in email!");
         }
-        public bool UserNameCheck()
-        {
-            MySqlConnection con = new MySqlConnection("server=studmysql01.fhict.local;database=dbi477923;uid=dbi477923;password=secret;");
-            MySqlCommand cmd = new MySqlCommand("Select count(*) from users where Email= @alias", con);
-            cmd.Parameters.AddWithValue("@alias", tbMail.Text);
-            con.Open();
-            int TotalRows = 0;
-            TotalRows = Convert.ToInt32(cmd.ExecuteScalar());
-            con.Close();
-            if (TotalRows > 0)
-            {
-                MessageBox.Show("Email already exist");
-                return true;
-            }
-            else
-            {
-                MessageBox.Show("Account created successfully!");
-                return false;
-            }
-        }
+        
     }
 }

@@ -11,11 +11,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
+
 namespace IndividualProject
 {
     public partial class Form1 : Form
     {
         Administration Administration = new Administration();
+        Login Login = new Login();
+        
         public Form1()
         {
             InitializeComponent();
@@ -33,16 +36,8 @@ namespace IndividualProject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection("server=studmysql01.fhict.local;database=dbi477923;uid=dbi477923;password=secret;");
-            MySqlCommand cmd = new MySqlCommand("select * from users;", conn);
-            conn.Open();
-            MySqlDataReader myReader = cmd.ExecuteReader();
-            while(myReader.Read())
-            {
-                User user = new User(Convert.ToInt32(myReader[0]), myReader[1].ToString(), myReader[2].ToString());
-                Administration.AddUsers=user;
-            }
-            conn.Close();
+            Administration.AddUsersFromList(Login.GetUsers());
+
             if (tbEmail.Text != "" )
             {
                 if (tbPassword.Text != "")

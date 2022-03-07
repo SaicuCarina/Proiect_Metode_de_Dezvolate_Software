@@ -15,6 +15,7 @@ namespace IndividualProject
     public partial class ResetPassword : Form
     {
         Administration administration = new Administration();
+        Login Login = new Login();
         string email = SendCode.to;
         public ResetPassword()
         {
@@ -32,11 +33,7 @@ namespace IndividualProject
                     {
                         if (tbPassword.Text == tbPasswordRepeat.Text)
                         {
-                            MySqlConnection conn = new MySqlConnection("server=studmysql01.fhict.local;database=dbi477923;uid=dbi477923;password=secret;");
-                            MySqlCommand cmd = new MySqlCommand("UPDATE `dbi477923`.`users`SET`Password` = '"+tbPassword.Text+"' WHERE `Email` = '"+email+"'; ", conn);
-                            conn.Open();
-                            cmd.ExecuteNonQuery();
-                            conn.Close();
+                            Login.ResetPassword(email, tbPassword.Text);
                             MessageBox.Show("Password reset successfully!");
                             Form1 form1 = new Form1();
                             this.Hide();
