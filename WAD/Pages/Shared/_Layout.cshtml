@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WAD</title>
+    <link rel="stylesheet" href="~/css/AllPages.css" />
+</head>
+<body class="HomePage">
+    <header>
+        <nav>
+            <div >
+                    <a class="a2" asp-area="" asp-page="/Index">Homepage</a>
+                    <a class="a2" asp-area="" asp-page="/CommunityPage">Community</a>
+                    <a class="a2" asp-area="" asp-page="/ProfilePage">Profile</a>
+                    <a class="a2 a1" asp-area="" asp-page="LogInPage">Login</a>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+
+
+</body>
+</html>

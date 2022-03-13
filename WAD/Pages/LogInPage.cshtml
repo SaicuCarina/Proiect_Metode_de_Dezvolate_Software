@@ -1,0 +1,31 @@
+﻿@page
+@model WAD.Pages.LogInPageModel
+@{
+    ViewData["Title"] = "Login";
+}
+<link rel="stylesheet" href="~/css/Login.css">
+<title>Login</title>
+<body class="Body1">
+    <div class="container">
+        <form method="post">
+            <label>Username : </label><br>
+            <input type="text" asp-for="UserInfo.Email" placeholder="Enter Username" name="username" required>
+            <br />
+            <br />
+            <label>Password : </label><br />
+            <input type="password" asp-for="UserInfo.Password" placeholder="Enter Password" name="password" required>
+            <br>
+            <br />
+            <button type="submit" class="main">Login</button>
+            <br>
+            <div>
+                <input type="checkbox" checked="checked"> Remember me
+                <br>
+                <br>
+                <a class="a3" href="">Forgot password? </a>
+            </div>
+            <br>
+            <a asp-page="/CreateAccount" type="button" formnovalidate class="main">Create Account</a>
+    </form>
+    </div>
+</body>

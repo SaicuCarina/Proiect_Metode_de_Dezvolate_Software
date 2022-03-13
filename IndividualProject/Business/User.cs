@@ -16,6 +16,15 @@ namespace IndividualProject
             this.email = username;
             this.password = password;
         }
+        public User(string username, string password)
+        {
+            this.Email = username;
+            this.password = password;
+        }
+        public User()
+        {
+            
+        }
         public int ID
             {
             get { return id; }

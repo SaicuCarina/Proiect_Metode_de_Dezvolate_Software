@@ -21,7 +21,7 @@ namespace IndividualProject
         }
         public string ReturnInfo(int i)
         {
-            return $"{users[i].Email} has id: {users[i]} and password: {users[i].Password}";
+            return $"{users[i].Email} has id: {users[i].ID} and password: {users[i].Password}";
         }
         public bool IsValidEmail(string eMail)
         {
@@ -69,6 +69,16 @@ namespace IndividualProject
                 
                 return false;
             }
+        }
+        public bool VerifyCredentials(string email, string password)
+        {
+            bool ok = false;
+            for (int i = 0; i < Users.Count() && ok == false; i++)
+            {
+                if (email == Users[i].Email)
+                    if (email == Users[i].Password) return true;
+            }
+            return false;
         }
 
     }

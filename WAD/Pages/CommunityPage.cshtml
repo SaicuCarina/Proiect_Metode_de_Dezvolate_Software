@@ -1,0 +1,36 @@
+﻿@page
+@model WAD.Pages.HomePageModel
+@{
+}
+
+<div class="postBody">
+    <form method="post" enctype="multipart/form-data">
+        <p class="post">Post something new:</p>
+        <textarea class="status" name="status" placeholder="What's new?" rows="4" cols="50"></textarea>
+        <br>
+        <button type="submit" class="HomePage">Post</button>
+        <label for="image">
+            <input type="file" name="image" id="image" style="display:none;" />
+            <img class="upload" src="download.png" />
+        </label>
+    </form>
+</div>
+
+
+<section class="MainContainer">
+    <section class="PostContainer">
+        <img src="profilePicture.png">
+        <section class="post">
+            Posted by name here
+        </section>
+    </section>
+    <section class="PostContainer">
+        <section class="Image">
+            <img src="NinoSchurter_Header.jpg">
+
+        </section>
+    </section>
+
+
+
+</section>
