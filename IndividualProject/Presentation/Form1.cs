@@ -30,6 +30,7 @@ namespace IndividualProject
             {
                 tbEmail.Text = Properties.Settings.Default.Email;
                 tbPassword.Text = Properties.Settings.Default.Password;
+                cbKeepMeLoggedIn.Checked = true;
             }
 
         }

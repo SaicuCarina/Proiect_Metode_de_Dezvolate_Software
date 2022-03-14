@@ -1,14 +1,16 @@
 using IndividualProject;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using WAD.Business;
 
 namespace WAD.Pages
 {
     public class LogInPageModel : PageModel
     {
         [BindProperty]
-        public User UserInfo{ get; set; }
+        public User UserInfo { get; set; }
         Administration administration = new Administration();
+        LoginAdministration loginAdministration = new LoginAdministration();
         Login login = new Login();
         public void OnGet()
         {
@@ -18,14 +20,12 @@ namespace WAD.Pages
 
         public IActionResult OnPost()
         {
-            if (administration.IsInDatabase(UserInfo.Email) == true)
+            if (ModelState.IsValid)
             {
-                if (administration.VerifyCredentials(UserInfo.Email, UserInfo.Password) == true)
-                {
-                    return RedirectToPage("/Index");
-                }
+                if(loginAdministration.VerifyLogin(UserInfo.Email, UserInfo.Password))
+                    return RedirectToPage("Index"); 
             }
-            return Page();
+            return RedirectToPage("ProfilePage");
         }
         
     }
