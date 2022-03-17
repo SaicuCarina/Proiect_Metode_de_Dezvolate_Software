@@ -45,12 +45,7 @@ namespace IndividualProject
                 {
                     if (Administration.IsValidEmail(tbEmail.Text) == true)
                     {
-                        bool ok = false;
-                        for (int i = 0; i < Administration.Users.Count() && ok == false; i++)
-                        {
-                            if (tbEmail.Text == Administration.Users[i].Email)
-                                if (tbPassword.Text == Administration.Users[i].Password) ok = true;
-                        }
+                        bool ok = Administration.VerifyCredentials(tbEmail.Text,tbPassword.Text);
                         if (ok == true)
                         {
                             if (cbKeepMeLoggedIn.Checked == true)
