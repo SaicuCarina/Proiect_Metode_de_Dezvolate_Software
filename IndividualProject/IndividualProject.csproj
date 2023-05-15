@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>IndividualProject</RootNamespace>
     <AssemblyName>IndividualProject</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -95,7 +96,14 @@
   <ItemGroup>
     <Compile Include="Business\Administration.cs" />
     <Compile Include="Business\EnumWhatToModify.cs" />
+    <Compile Include="Business\login-info.cs" />
     <Compile Include="Persistance\Login.cs" />
+    <Compile Include="Presentation\Add1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Add1.Designer.cs">
+      <DependentUpon>Add1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Community.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -133,6 +141,12 @@
     <Compile Include="Presentation\ProfileSettings.Designer.cs">
       <DependentUpon>ProfileSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Presentation\ResetPassword.cs">
       <SubType>Form</SubType>
@@ -147,6 +161,9 @@
       <DependentUpon>SendCode.cs</DependentUpon>
     </Compile>
     <Compile Include="Business\User.cs" />
+    <EmbeddedResource Include="Presentation\Add1.resx">
+      <DependentUpon>Add1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Community.resx">
       <DependentUpon>Community.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\ProfileSettings.resx">
       <DependentUpon>ProfileSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

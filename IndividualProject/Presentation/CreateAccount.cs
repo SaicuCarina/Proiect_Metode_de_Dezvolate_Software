@@ -36,16 +36,25 @@ namespace IndividualProject
                     {
                         if (tbPassword.Text == tbRepeatPassword.Text)
                         {
-                            if (administration.UserNameCheck(tbMail.Text) == false)
+                            if (tbID.Text != "")
                             {
-                                Login.CreateAccount(tbMail.Text, tbPassword.Text);
-                                this.Hide();
-                                Form1 form1 = new Form1();
-                                form1.Closed += (s, args) => this.Close();
-                                MessageBox.Show("Account created successfully!");
-                                form1.Show();
+                                if (administration.IsValidID(tbID.Text) == true)
+                                {
+
+                                if (administration.UserNameCheck(tbMail.Text) == false)
+                                {
+                                    Login.CreateAccount(tbMail.Text, tbPassword.Text, tbID.Text);
+                                    this.Hide();
+                                    Form1 form1 = new Form1();
+                                    form1.Closed += (s, args) => this.Close();
+                                    MessageBox.Show("Account created successfully!");
+                                    form1.Show();
+                                }
+                                else MessageBox.Show("Email already exists!");
                             }
-                            else MessageBox.Show("Email already exists!");
+                            else MessageBox.Show("Please fill in a valid ID!");
+                            }
+                        else MessageBox.Show("Please fill in an ID!");
                         }
                         else MessageBox.Show("Passwords don't match!");
                     }
@@ -55,6 +64,15 @@ namespace IndividualProject
             }
             else MessageBox.Show("Please fill in email!");
         }
-        
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

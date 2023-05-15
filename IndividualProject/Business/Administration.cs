@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace IndividualProject
 {
@@ -41,6 +42,7 @@ namespace IndividualProject
         public bool IsInDatabase(string email)
         {
             
+            
             int TotalRows = Login.NumberOfUsersWithSpecificName(email);
             if (TotalRows > 0)
             {
@@ -50,6 +52,7 @@ namespace IndividualProject
             {
                 return false;
             }
+            
 
         }
         public void AddUsersFromList(List<User> users)
@@ -58,6 +61,7 @@ namespace IndividualProject
         }
         public bool UserNameCheck(string email)
         {
+            
             int TotalRows = Login.NumberOfUsersWithSpecificName(email);
             if (TotalRows > 0)
             {
@@ -69,9 +73,11 @@ namespace IndividualProject
                 
                 return false;
             }
+  
         }
         public bool VerifyCredentials(string email, string password)
         {
+            
             bool ok = false;
             for (int i = 0; i < Users.Count() && ok == false; i++)
             {
@@ -80,6 +86,20 @@ namespace IndividualProject
             }
             return false;
         }
+
+        public bool IsValidID(string ID)
+        {
+            int TotalRows = Login.NumberOfUsersWithSpecificID(ID);
+            if (TotalRows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+       
 
     }
 }

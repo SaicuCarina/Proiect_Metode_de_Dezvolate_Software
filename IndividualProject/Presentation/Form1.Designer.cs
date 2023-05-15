@@ -36,49 +36,51 @@ namespace IndividualProject
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnForgotPassword = new System.Windows.Forms.Button();
             this.cbKeepMeLoggedIn = new System.Windows.Forms.CheckBox();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbEmail
             // 
-            this.tbEmail.Location = new System.Drawing.Point(85, 117);
+            this.tbEmail.Location = new System.Drawing.Point(96, 146);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(134, 22);
+            this.tbEmail.Size = new System.Drawing.Size(150, 26);
             this.tbEmail.TabIndex = 0;
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(85, 185);
+            this.tbPassword.Location = new System.Drawing.Point(96, 231);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(134, 22);
+            this.tbPassword.Size = new System.Drawing.Size(150, 26);
             this.tbPassword.TabIndex = 1;
             this.tbPassword.UseSystemPasswordChar = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(82, 97);
+            this.label1.Location = new System.Drawing.Point(92, 122);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 17);
+            this.label1.Size = new System.Drawing.Size(48, 20);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Username";
+            this.label1.Text = "Email";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(82, 165);
+            this.label2.Location = new System.Drawing.Point(92, 206);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(85, 256);
+            this.btnLogin.Location = new System.Drawing.Point(96, 320);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(134, 36);
+            this.btnLogin.Size = new System.Drawing.Size(151, 45);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -88,37 +90,29 @@ namespace IndividualProject
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(119, 49);
+            this.label4.Location = new System.Drawing.Point(134, 61);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 26);
+            this.label4.Size = new System.Drawing.Size(85, 31);
             this.label4.TabIndex = 7;
             this.label4.Text = "Login";
-            // 
-            // btnForgotPassword
-            // 
-            this.btnForgotPassword.Location = new System.Drawing.Point(85, 340);
-            this.btnForgotPassword.Name = "btnForgotPassword";
-            this.btnForgotPassword.Size = new System.Drawing.Size(134, 36);
-            this.btnForgotPassword.TabIndex = 8;
-            this.btnForgotPassword.Text = "Forgot Password";
-            this.btnForgotPassword.UseVisualStyleBackColor = true;
-            this.btnForgotPassword.Click += new System.EventHandler(this.btnForgotPassword_Click);
             // 
             // cbKeepMeLoggedIn
             // 
             this.cbKeepMeLoggedIn.AutoSize = true;
-            this.cbKeepMeLoggedIn.Location = new System.Drawing.Point(85, 213);
+            this.cbKeepMeLoggedIn.Location = new System.Drawing.Point(96, 266);
+            this.cbKeepMeLoggedIn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbKeepMeLoggedIn.Name = "cbKeepMeLoggedIn";
-            this.cbKeepMeLoggedIn.Size = new System.Drawing.Size(148, 21);
+            this.cbKeepMeLoggedIn.Size = new System.Drawing.Size(166, 24);
             this.cbKeepMeLoggedIn.TabIndex = 9;
             this.cbKeepMeLoggedIn.Text = "Keep me logged in";
             this.cbKeepMeLoggedIn.UseVisualStyleBackColor = true;
             // 
             // btnCreateAccount
             // 
-            this.btnCreateAccount.Location = new System.Drawing.Point(85, 298);
+            this.btnCreateAccount.Location = new System.Drawing.Point(96, 372);
+            this.btnCreateAccount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCreateAccount.Name = "btnCreateAccount";
-            this.btnCreateAccount.Size = new System.Drawing.Size(134, 36);
+            this.btnCreateAccount.Size = new System.Drawing.Size(151, 45);
             this.btnCreateAccount.TabIndex = 10;
             this.btnCreateAccount.Text = "Create Account";
             this.btnCreateAccount.UseVisualStyleBackColor = true;
@@ -126,12 +120,11 @@ namespace IndividualProject
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 405);
+            this.ClientSize = new System.Drawing.Size(363, 506);
             this.Controls.Add(this.btnCreateAccount);
             this.Controls.Add(this.cbKeepMeLoggedIn);
-            this.Controls.Add(this.btnForgotPassword);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);
@@ -139,6 +132,7 @@ namespace IndividualProject
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbEmail);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -155,7 +149,6 @@ namespace IndividualProject
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnForgotPassword;
         private System.Windows.Forms.CheckBox cbKeepMeLoggedIn;
         private System.Windows.Forms.Button btnCreateAccount;
     }

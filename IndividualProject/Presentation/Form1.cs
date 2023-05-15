@@ -1,4 +1,5 @@
 ﻿
+using IndividualProject.Business;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,8 @@ namespace IndividualProject
     {
         Administration Administration = new Administration();
         Login Login = new Login();
-        
+        List<User> Users = new List<User>();
+
         public Form1()
         {
             InitializeComponent();
@@ -37,7 +39,7 @@ namespace IndividualProject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Administration.AddUsersFromList(Login.GetUsers());
+            Users = Login.GetUsers();
 
             if (tbEmail.Text != "" )
             {
@@ -45,7 +47,7 @@ namespace IndividualProject
                 {
                     if (Administration.IsValidEmail(tbEmail.Text) == true)
                     {
-                        bool ok = Administration.VerifyCredentials(tbEmail.Text,tbPassword.Text);
+                        bool ok = Login.VerifyCredentials(tbEmail.Text,tbPassword.Text, Users);
                         if (ok == true)
                         {
                             if (cbKeepMeLoggedIn.Checked == true)
@@ -60,6 +62,7 @@ namespace IndividualProject
                                 Properties.Settings.Default.Password = "";
                                 Properties.Settings.Default.Save();
                             }
+                            login_info.email = tbEmail.Text;
                             this.Hide();
                             MainFrom mainFrom = new MainFrom();
                             mainFrom.Closed += (s, args) => this.Close();

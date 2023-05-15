@@ -29,6 +29,7 @@ namespace IndividualProject
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendCode));
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,41 +40,44 @@ namespace IndividualProject
             // 
             // tbEmail
             // 
-            this.tbEmail.Location = new System.Drawing.Point(66, 107);
+            this.tbEmail.Location = new System.Drawing.Point(74, 134);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(161, 22);
+            this.tbEmail.Size = new System.Drawing.Size(181, 26);
             this.tbEmail.TabIndex = 0;
             // 
             // tbCode
             // 
-            this.tbCode.Location = new System.Drawing.Point(66, 216);
+            this.tbCode.Location = new System.Drawing.Point(74, 270);
+            this.tbCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbCode.Name = "tbCode";
-            this.tbCode.Size = new System.Drawing.Size(161, 22);
+            this.tbCode.Size = new System.Drawing.Size(181, 26);
             this.tbCode.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 71);
+            this.label1.Location = new System.Drawing.Point(71, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 17);
+            this.label1.Size = new System.Drawing.Size(91, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Enter Email";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(63, 179);
+            this.label2.Location = new System.Drawing.Point(71, 224);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 17);
+            this.label2.Size = new System.Drawing.Size(160, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Enter Received Code";
             // 
             // btnSendCode
             // 
-            this.btnSendCode.Location = new System.Drawing.Point(295, 106);
+            this.btnSendCode.Location = new System.Drawing.Point(332, 132);
+            this.btnSendCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSendCode.Name = "btnSendCode";
-            this.btnSendCode.Size = new System.Drawing.Size(75, 23);
+            this.btnSendCode.Size = new System.Drawing.Size(84, 29);
             this.btnSendCode.TabIndex = 4;
             this.btnSendCode.Text = "Send Code";
             this.btnSendCode.UseVisualStyleBackColor = true;
@@ -81,9 +85,10 @@ namespace IndividualProject
             // 
             // btnVerifyCode
             // 
-            this.btnVerifyCode.Location = new System.Drawing.Point(295, 216);
+            this.btnVerifyCode.Location = new System.Drawing.Point(332, 270);
+            this.btnVerifyCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnVerifyCode.Name = "btnVerifyCode";
-            this.btnVerifyCode.Size = new System.Drawing.Size(75, 23);
+            this.btnVerifyCode.Size = new System.Drawing.Size(84, 29);
             this.btnVerifyCode.TabIndex = 5;
             this.btnVerifyCode.Text = "Verify";
             this.btnVerifyCode.UseVisualStyleBackColor = true;
@@ -91,15 +96,17 @@ namespace IndividualProject
             // 
             // SendCode
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 450);
+            this.ClientSize = new System.Drawing.Size(514, 562);
             this.Controls.Add(this.btnVerifyCode);
             this.Controls.Add(this.btnSendCode);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbCode);
             this.Controls.Add(this.tbEmail);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "SendCode";
             this.Text = "SendCode";
             this.Load += new System.EventHandler(this.SendCode_Load);

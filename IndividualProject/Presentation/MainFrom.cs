@@ -48,9 +48,12 @@ namespace IndividualProject
             form1.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btn_add_Click(object sender, EventArgs e)
         {
+            panelChildForm.Controls.Clear();
 
+            Add1 add1 = new Add1();
+            panelChildForm.Controls.Add(add1);
         }
     }
 }
